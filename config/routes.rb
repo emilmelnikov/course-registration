@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'welcome#index'
+  resource :enrollments, only: [:edit, :update]
 
   devise_for :users
   devise_for :admin_users, ActiveAdmin::Devise.config

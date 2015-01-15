@@ -1,0 +1,3 @@
+= simple_form_for current_user, url: enrollments_path do |f|
+  = f.association :courses, as: :check_boxes
+  = f.button :submit
