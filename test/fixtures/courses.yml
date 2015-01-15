@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: courses
+#
+#  id            :integer          not null, primary key
+#  title         :string
+#  credits       :integer
+#  max_attendees :integer
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  credits: 1
+  max_attendees: 1
+
+two:
+  title: MyString
+  credits: 1
+  max_attendees: 1
