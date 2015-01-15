@@ -37,6 +37,7 @@ gem 'simple_form'
 gem 'foundation-rails'
 gem 'annotate'
 gem 'slim-rails'
+gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
 gem 'inherited_resources', github: 'josevalim/inherited_resources', branch: 'rails-4-2'
 
