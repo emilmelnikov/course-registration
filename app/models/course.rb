@@ -11,6 +11,8 @@
 #
 
 class Course < ActiveRecord::Base
+  has_and_belongs_to_many :users
+
   validates :title, :credits, :max_attendees, presence: true
   validates :credits, :max_attendees, numericality: {only_integer: true, greater_than: 0}
 end
