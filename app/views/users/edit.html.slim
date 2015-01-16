@@ -1,0 +1,28 @@
+h2 Enrollment
+= form_for current_user do |f|
+  label
+    | First name
+    = f.text_field :first_name
+  label
+    | Last name
+    = f.text_field :last_name
+  label
+    | Email
+    = f.email_field :email, disabled: true
+  = f.hidden_field :course_ids, {multiple: true, value: nil}
+  table
+    caption Courses
+    thead
+      tr
+        th
+        th Title
+        th Credits
+        th Places left
+    tbody
+      - Course.find_each do |course|
+        tr
+          td = f.check_box :course_ids, {multiple: true}, course.id, nil
+          td = course.title
+          td = course.credits
+          td = course.places_left
+  = f.submit 'Save', class: 'button success'

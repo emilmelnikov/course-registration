@@ -16,10 +16,6 @@ class Course < ActiveRecord::Base
   validates :title, :credits, :max_attendees, presence: true
   validates :credits, :max_attendees, numericality: {only_integer: true, greater_than: 0}
 
-  def display_title
-    "#{title} | Credits: #{credits} | Places left: #{places_left}"
-  end
-
   def places_left
     max_attendees - users.count
   end

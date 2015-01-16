@@ -52,7 +52,7 @@ class User < ActiveRecord::Base
 
   def disallow_enrollment_on_full_courses
     courses.each do |course|
-      if course.places_left <= 0
+      if course.places_left < 0
         errors[:base] << "Course #{course.title} already full"
       end
     end

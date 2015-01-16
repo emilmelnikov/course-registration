@@ -10,11 +10,23 @@ html lang="en"
   body
 
     .row
-      - if alert
+
+      - if alert.is_a?(String)
         .alert-box.alert = alert
-      - if notice
+      - elsif alert.is_a?(Enumerable)
+        - alert.each do |a|
+          .alert-box.alert = a
+
+      - if notice.is_a?(String)
         .alert-box = notice
+      - elsif notice.is_a?(Enumerable)
+        - notice.each do |n|
+          .alert-box = n
 
     .row
       == yield
+
+    - if user_signed_in?
+      .row = link_to 'Log out', destroy_user_session_path, method: :delete
+
     = javascript_include_tag "application"

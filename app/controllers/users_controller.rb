@@ -1,4 +1,4 @@
-class EnrollmentsController < ApplicationController
+class UsersController < ApplicationController
   def edit
   end
 
@@ -8,12 +8,12 @@ class EnrollmentsController < ApplicationController
     else
       flash[:alert] = current_user.errors[:base]
     end
-    redirect_to edit_enrollments_url
+    redirect_to edit_user_url
   end
 
   private
 
   def user_params
-    params.require(:user).permit(course_ids: [])
+    params.require(:user).permit(:first_name, :last_name, course_ids: [])
   end
 end

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root 'enrollments#edit'
-  resource :enrollments, only: [:edit, :update]
+  root 'users#edit'
+  resource :users, only: [:edit, :update], as: :user
 
   devise_for :users
   devise_for :admin_users, ActiveAdmin::Devise.config
