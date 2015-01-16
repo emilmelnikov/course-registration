@@ -34,7 +34,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'pg'
-gem 'thin'
 gem 'simple_form'
 gem 'foundation-rails'
 gem 'annotate'
@@ -42,6 +41,10 @@ gem 'slim-rails'
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
 gem 'inherited_resources', github: 'josevalim/inherited_resources', branch: 'rails-4-2'
+
+group :development do
+  gem 'thin'
+end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -54,3 +57,6 @@ group :development, :test do
   gem 'spring'
 end
 
+group :production do
+  gem 'unicorn'
+end
