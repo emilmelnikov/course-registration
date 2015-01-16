@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'welcome#index'
+  root 'enrollments#edit'
   resource :enrollments, only: [:edit, :update]
 
   devise_for :users

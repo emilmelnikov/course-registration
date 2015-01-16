@@ -3,7 +3,11 @@ class EnrollmentsController < ApplicationController
   end
 
   def update
-    User.find(current_user.id).update(user_params)
+    if current_user.update(user_params)
+      flash[:notice] = 'Your preferences was successfully updated'
+    else
+      flash[:alert] = current_user.errors[:base]
+    end
     redirect_to edit_enrollments_url
   end
 
