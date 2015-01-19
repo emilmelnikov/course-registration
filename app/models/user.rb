@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
 
   private
 
-  MIN_CREDITS = 30
+  MIN_CREDITS = 18
 
   def ensure_min_credits
     if total_credits < MIN_CREDITS
