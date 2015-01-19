@@ -10,6 +10,9 @@ html lang="en"
   body
 
     .row
+      = image_tag 'logo.jpg'
+
+    .row
 
       - if alert.is_a?(String)
         .alert-box.alert = alert
